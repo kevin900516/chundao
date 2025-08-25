@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="home-page">
     <header>
         <nav>
             <div class="hamburger-menu">
@@ -27,8 +27,8 @@
                         <a href="pages/ceramics.html">陶藝品&茶葉</a>
                     </div>
                 </li>
-                <li><a href="https://app.huaxidigit.com/AppWf/OrderApp?Shop=D5FF2B8139714AF1">春稻商店</a></li>
-                <li><a href="https://line.me/R/ti/p/%40596olwsz">聯絡我們</a></li>
+                <li><a href="https://app.huaxidigit.com/AppWf/OrderApp?Shop=D5FF2B8139714AF1" target="_blank" rel="noopener">春稻商店</a></li>
+                <li><a href="pages/contact.html">聯絡我們</a></li>
             </ul>
             <div class="header-icons">
                 <div class="search-container">
@@ -51,8 +51,8 @@
                 <a href="pages/crafts.html">飾品工藝</a>
                 <a href="pages/ceramics.html">陶藝品&茶葉</a>
             </div>
-            <a href="https://app.huaxidigit.com/AppWf/OrderApp?Shop=D5FF2B8139714AF1">春稻商店</a>
-            <a href="https://line.me/R/ti/p/%40596olwsz">聯絡我們</a>
+            <a href="https://app.huaxidigit.com/AppWf/OrderApp?Shop=D5FF2B8139714AF1" target="_blank" rel="noopener">春稻商店</a>
+            <a href="pages/contact.html">聯絡我們</a>
         </div>
     </div>
 
@@ -61,19 +61,52 @@
         <div class="carousel-cell"><img src="images/362511986.jpg" alt="Image 2"></div>
     </div>
 
-    <main>
+    <main class="ceramics-background">
         <section class="about-section">
             <div class="about-content">
                 <img src="images/1454239043.jpg" alt="春稻藝術坊" class="about-image" data-aos="fade-right">
                 <div class="about-text">
-                    <h2 data-aos="fade-left">春稻藝術坊</h2>
+                    <h2 data-aos="fade-left" class="section-title">春稻藝術坊</h2>
                     <p data-aos="fade-left">　　自1989年創立以來，春稻始終秉持「分享愛與幸福」的初心，致力於推廣台灣在地文化精髓，融合茶具、陶器以及融合傳統文化與時尚的 陳春稻 風格服飾為主軸，為顧客打造一處品味生活的心靈角落。</p>
                     <p data-aos="fade-left">　　我們以一泡好茶、一席好器、一身風雅為理念核心，邀請每一位來訪者細細品茗、靜觀器形、感受布置空間中的溫度與誠意。透過獨具匠心的茶席擺設，傳遞出「心靈的溫度」 尊重所有…感受簡約之美，體會東方文化的深淵意涵的待客之道，讓人於簡約之美中體會東方文化的深遠意涵。</p>
                     <p data-aos="fade-left">　　風格服飾．生活就是修行，由創辦人陳春稻設計的風格服飾，融合東方茶道、香道、花道之靜雅禪意，並揉合現代時尚元素，讓傳統文化不僅留於心中，更能穿梭於日常之中，展現東方女性沉穩自信與柔美力量。</p>
                 </div>
             </div>
         </section>
-        <section class="news-background"></section>
+        <section class="products-background"></section>
+        <section class="products-section">
+            <h2 data-aos="fade-in" class="section-title">服務項目</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up">
+                    <img src="images/clothes/line-album-25-6-250625-3.jpg" alt="春稻風格服飾">
+                    <h3>春稻風格服飾</h3>
+                    <a href="pages/clothing.html" class="btn">查看更多</a>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/crafts/s-47980554-0.jpg" alt="飾品工藝">
+                    <h3>飾品工藝</h3>
+                    <a href="pages/crafts.html" class="btn">查看更多</a>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/362511986.jpg" alt="陶藝品&茶葉">
+                    <h3>陶藝品&茶葉</h3>
+                    <a href="pages/ceramics.html" class="btn">查看更多</a>
+                </div>
+            </div>
+        </section>
+        <section class="products-background"></section>
+        <section class="products-section">
+            <h2 data-aos="fade-in" class="section-title">最新商品</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up">
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                </div>
+            </div>
+        </section>
+        <section class="products-background"></section>
         <section class="news-section">
             <h2 data-aos="fade-in">最新消息</h2>
             <p data-aos="fade-in">春稻也定期舉辦多元課程與文化活動，邀請大家一起體驗生活美學。</p>
@@ -111,16 +144,15 @@
         <div class="footer-content">
             <div class="footer-left">
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Line"><i class="fab fa-line"></i></a>
+                    <a href="https://www.facebook.com/chundao.tw" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://line.me/R/ti/p/%40596olwsz" target="_blank" rel="noopener" aria-label="Line"><i class="fab fa-line"></i></a>
                 </div>
                 <p>&copy; 2024 春稻藝術坊. All Rights Reserved.</p>
             </div>
             <div class="footer-center">
                 <a href="#">服務條款</a>
                 <a href="#">購物須知</a>
-                <a href="https://line.me/R/ti/p/%40596olwsz">聯絡我們</a>
+                <a href="pages/contact.html">聯絡我們</a>
             </div>
             <div class="footer-right">
                 <p>地址：408 台中市南屯區南屯路二段685號</p>

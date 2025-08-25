@@ -5,29 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>飾品工藝 - 春稻藝術坊</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
             <a href="../index.html" class="logo"><img src="../images/chundao_logo.png" alt="春稻藝術坊 Logo"></a>
-            <ul>
+            <ul class="desktop-nav">
                 <li><a href="../index.html">首頁</a></li>
                 <li><a href="about.html">關於春稻</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn">春稻雅集</a>
+                    <a href="javascript:void(0);" class="dropbtn">春稻雅集</a>
                     <div class="dropdown-content">
                         <a href="clothing.html">春稻風格服飾</a>
                         <a href="crafts.html">飾品工藝</a>
                         <a href="ceramics.html">陶藝品&茶葉</a>
                     </div>
                 </li>
-                <li><a href="https://app.huaxidigit.com/AppWf/OrderApp?Shop=D5FF2B8139714AF1">春稻商店</a></li>
-                <li><a href="https://line.me/R/ti/p/%40596olwsz">聯絡我們</a></li>
+                <li><a href="https://app.huaxidigit.com/AppWf/OrderApp?Shop=D5FF2B8139714AF1" target="_blank" rel="noopener">春稻商店</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
             </ul>
+            <div class="header-icons">
+                <div class="search-container">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <input type="text" class="search-bar" placeholder="搜尋...">
+                </div>
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
         </nav>
     </header>
-    <main>
-        <h1>飾品工藝</h1>
+
+    <div class="mobile-nav-overlay">
+        <a href="javascript:void(0)" class="close-btn">&times;</a>
+        <div class="mobile-nav-content">
+            <a href="../index.html">首頁</a>
+            <a href="about.html">關於春稻</a>
+            <a href="javascript:void(0);">春稻雅集</a>
+            <div class="mobile-dropdown-content">
+                <a href="clothing.html">春稻風格服飾</a>
+                <a href="crafts.html">飾品工藝</a>
+                <a href="ceramics.html">陶藝品&茶葉</a>
+            </div>
+            <a href="https://app.huaxidigit.com/AppWf/OrderApp?Shop=D5FF2B8139714AF1" target="_blank" rel="noopener">春稻商店</a>
+            <a href="contact.html">聯絡我們</a>
+        </div>
+    </div>
+
+    <main class="ceramics-background">
+        <section class="about-page-section">
+            <h1 data-aos="fade-up">飾品工藝</h1>
+            <div class="clothing-text">
+                <p style="text-align: center;" data-aos="fade-up">能量與美學的交織</p>
+                <p data-aos="fade-up">　　源自自然的靈感，融合匠心工藝。澄春稻風格飾品嚴選天然珠寶與高級材料，延續春稻品牌的質樸美學，細緻打造每一件飾品。</p>
+                <p data-aos="fade-up">　　無論是一抹溫潤的光澤，或是一絲純粹的線條設計，皆傳遞著自然與心意的和諧共鳴。佩戴的不只是飾品，更是一份貼近土地與自我的靜謐風格。</p>
+            </div>
+            <div class="clothing-gallery" data-aos="fade-up">
+                <img src="../images/crafts/s-47980554-0.jpg" alt="飾品工藝">
+                <img src="../images/crafts/s-47980557-0.jpg" alt="飾品工藝">
+                <img src="../images/crafts/s-478003361.jpg" alt="飾品工藝">
+                <img src="../images/crafts/s-48988366-0.jpg" alt="飾品工藝">
+                <img src="../images/crafts/s-48988369-0.jpg" alt="飾品工藝">
+                <img src="../images/crafts/s-48988394-0.jpg" alt="飾品工藝">
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/chundao.tw" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://line.me/R/ti/p/%40596olwsz" target="_blank" rel="noopener" aria-label="Line"><i class="fab fa-line"></i></a>
+                </div>
+                <p>&copy; 2024 春稻藝術坊. All Rights Reserved.</p>
+            </div>
+            <div class="footer-center">
+                <a href="#">服務條款</a>
+                <a href="#">購物須知</a>
+                <a href="contact.html">聯絡我們</a>
+            </div>
+            <div class="footer-right">
+                <p>地址：408 台中市南屯區南屯路二段685號</p>
+                <p>電話：(04) 2381 7587</p>
+                <p>營業時間：10:00–19:00 (週日公休)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
