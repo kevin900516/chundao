@@ -145,12 +145,11 @@ main {
 
 /* --- Footer --- */
 footer {
-    padding: 0.5rem 2rem; /* Further reduced vertical padding */
+    padding: 1rem 2rem;
     border-top: 1px solid #eee;
     background-image: url('../../images/ft_bg2.jpg');
     background-size: cover;
     background-position: center;
-    text-align: center;
     font-size: 0.9rem;
     color: #fff;
 }
@@ -159,35 +158,54 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the main content block */
     align-items: center;
+    position: relative; /* Needed for absolute positioning of child */
 }
 
-.footer-right {
-    text-align: right;
-}
-
-.footer-center {
+.footer-center-content {
     display: flex;
-    gap: 2rem;
-}
-
-.footer-center a {
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-.footer-center a:hover {
-    color: #a38a6d;
-}
-
-.social-links {
-    margin-top: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .social-links a {
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
+    margin: 0 0.75rem;
+    font-size: 1.75rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-links a,
+.footer-links span {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #a38a6d;
+}
+
+.copyright {
+    margin: 0;
+}
+
+.footer-info {
+    position: absolute;
+    right: 0; /* Align to the right of footer-content */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+    text-align: right;
+}
+
+.footer-info p {
+    margin: 0.1rem 0;
+    font-size: 0.8rem;
 }
 
 /* --- Hero Section & Carousel --- */
@@ -310,7 +328,13 @@ footer {
 .about-page-section h1 {
     text-align: center;
     margin-bottom: 2rem;
-    margin-top: 8rem; /* Add top margin */
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem; /* Adjusted top margin */
+    font-family: 'Noto Serif TC', serif;
 }
 
 .about-content-grid {
@@ -367,12 +391,12 @@ footer {
 
 .news-carousel {
     width: 80%;
-    margin: 2rem auto 0;
+    margin: 0 auto 0 5rem; /* 移除頂部邊距並保持左邊距 */
 }
 
 .news-carousel .carousel-cell {
-    width: 33%;
-    height: 350px; /* Increased height to accommodate figcaption */
+    width: 100%;
+    height: 500px; /* Increased height to accommodate figcaption */
     margin-right: 10px;
 }
 
@@ -386,7 +410,7 @@ footer {
 
 .news-carousel .carousel-cell img {
     width: 100%;
-    height: 300px; /* Set a fixed height for the image */
+    height: 450px; /* Set a fixed height for the image */
     object-fit: cover;
     object-position: top; /* Prioritize the top of the image */
 }
@@ -396,6 +420,21 @@ footer {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+}
+
+.news-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.news-carousel {
+    flex: 1;
+}
+
+.facebook-embed {
+    flex: 1;
 }
 
 /* --- Hamburger Menu --- */
@@ -677,7 +716,7 @@ footer {
 }
 
 body:not(.home-page) main {
-    padding-top: 135px;
+    padding-top: 100px;
 }
 
 .products-background {
@@ -685,4 +724,49 @@ body:not(.home-page) main {
     background-image: url('../../images/ft_bg.jpg');
     background-size: cover;
     background-position: center;
+}
+
+/* --- Shopping Guide --- */
+.shopping-guide {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.accordion {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-button h3 {
+    margin: 0;
+    font-family: 'Noto Serif TC', serif;
+}
+
+.accordion-button .icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1rem;
 }

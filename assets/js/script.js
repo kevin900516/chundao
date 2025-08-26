@@ -74,4 +74,34 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileNavOverlay.style.width = '0';
         });
     }
+
+    // --- Accordion Logic ---
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        const button = item.querySelector('.accordion-button');
+        const content = item.querySelector('.accordion-content');
+        const icon = button.querySelector('.icon');
+
+        button.addEventListener('click', () => {
+            const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+            // Close all other accordions
+            accordionItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.accordion-content').style.maxHeight = '0';
+                    otherItem.querySelector('.accordion-button .icon').textContent = '+';
+                }
+            });
+
+            // Toggle the clicked accordion
+            if (isExpanded) {
+                content.style.maxHeight = '0';
+                icon.textContent = '+';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.textContent = '-';
+            }
+        });
+    });
 });
