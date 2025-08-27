@@ -9,6 +9,9 @@ body {
     color: #333; /* 深灰色文字，避免純黑的生硬感 */
     line-height: 1.6;
     font-size: 18px; /* Increase base font size */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -152,6 +155,7 @@ footer {
     background-position: center;
     font-size: 0.9rem;
     color: #fff;
+    margin-top: auto;
 }
 
 .footer-content {
@@ -477,6 +481,14 @@ footer {
     transition: 0.3s;
 }
 
+.mobile-nav-content a {
+    border-bottom: 1px solid #ccc;
+}
+
+.mobile-nav-content > a:last-of-type {
+    border-bottom: none;
+}
+
 .mobile-nav-overlay a:hover, .mobile-nav-overlay a:focus {
     color: #a38a6d;
 }
@@ -520,6 +532,10 @@ footer {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .header-icons {
+        margin-right: 2rem;
     }
 
     header {
@@ -769,4 +785,111 @@ body:not(.home-page) main {
     overflow: hidden;
     transition: max-height 0.3s ease;
     padding: 0 1rem;
+}
+
+/* --- Contact Form --- */
+.contact-form-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.contact-form-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #a38a6d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* --- Back to Top Button & Social Icons --- */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #a38a6d;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 1;
+    transition: background-color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #333;
+}
+
+.social-icons-fixed {
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons-fixed a {
+    color: #a38a6d;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons-fixed a:hover {
+    background-color: #a38a6d;
+    color: white;
 }
