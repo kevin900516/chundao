@@ -3,9 +3,6 @@ body {
     font-family: 'Noto Serif TC', serif; /* 使用思源宋體，更具古典美感 */
     margin: 0;
     padding: 0;
-    background-image: url('../../images/mountain_1.png');
-    background-size: cover;
-    background-position: center;
     color: #333; /* 深灰色文字，避免純黑的生硬感 */
     line-height: 1.6;
     font-size: 18px; /* Increase base font size */
@@ -1069,5 +1066,9 @@ body:not(.home-page) main {
 
     .tea-image {
         max-width: 100%;
+    }
+
+    .about-content-grid {
+        grid-template-columns: 1fr;
     }
 }
