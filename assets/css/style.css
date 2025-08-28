@@ -27,7 +27,7 @@ a:hover {
 h2 {
     text-align: center;
     margin-top: 2rem;
-    font-weight: 400; /* 較細的字重，更顯優雅 */
+    font-weight: bold; /* 較細的字重，更顯優雅 */
 }
 
 /* --- Header & Navigation --- */
@@ -284,20 +284,15 @@ footer {
 
 /* --- Main Carousel --- */
 .main-carousel {
-    width: 100%;
     height: 80vh; /* Set height to 80% of the viewport height */
 }
 
 .carousel-cell {
     width: 100%;
     height: 100%;
-}
-
-.carousel-cell img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
 }
 
 /* --- About Section --- */
@@ -327,6 +322,10 @@ footer {
 /* --- About Page --- */
 .about-page-section {
     padding: 4rem 2rem;
+}
+
+.shop-section {
+    padding: 1rem 2rem;
 }
 
 .about-page-section h1 {
@@ -507,8 +506,18 @@ footer {
         flex-direction: column;
     }
 
+    .about-image {
+        max-width: 100%;
+    }
+
     .main-carousel {
-        height: 400px;
+        height: 90vw;
+    }
+
+    .carousel-cell {
+        background-size: contain;
+        background-position: center 100%;
+        background-repeat: no-repeat;
     }
 
     .desktop-nav {
@@ -550,6 +559,12 @@ footer {
     }
     .hero-text h1 {
         font-size: 2rem;
+    }
+    .home-page .main-carousel {
+        margin-top: 130px;
+    }
+    .home-page main {
+        padding-top: 0;
     }
 }
 
@@ -603,47 +618,87 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 .clothing-gallery img {
     width: 100%;
-    height: 400px;
     object-fit: cover;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    aspect-ratio: 1 / 1;
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.product-gallery img {
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    aspect-ratio: 1 / 1;
 }
 
 .clothing-text {
-    padding: 0 5rem;
+    padding: 0;
     text-align: center;
 }
 
 /* --- Tea Section --- */
 .tea-section {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr; /* Image on left, text on right */
+    grid-template-areas: "image description";
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center; /* Vertically align items */
 }
 
-.tea-section.reverse {
-    flex-direction: row-reverse;
-}
-
-.tea-image {
-    flex: 1;
-    max-width: 40%;
-}
-
-.tea-image img {
+.tea-section img {
+    grid-area: image;
     width: 100%;
-    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.tea-text {
-    flex: 2;
+.tea-description {
+    grid-area: description;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
 }
+
+.tea-description h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.tea-section.reverse {
+    grid-template-areas: "description image"; /* Text on left, image on right */
+    grid-template-columns: 2fr 1.5fr; /* Ensure image column has 1.5fr width */
+}
+
+@media (max-width: 768px) {
+    .tea-section {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "image"
+            "description"; /* Stack image then text on mobile */
+    }
+
+    .tea-section.reverse {
+        grid-template-areas:
+            "image"
+            "description"; /* Still stack on mobile */
+    }
+}
+
+
 
 .ceramics-background {
     background-image: url('../../images/texture2.png');
@@ -705,7 +760,7 @@ footer {
 
 .product-card img {
     width: 100%;
-    height: 300px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -717,7 +772,7 @@ footer {
     display: inline-block;
     padding: 0.5rem 1rem;
     background: #a38a6d;
-    color: #fff;
+    color: #333;
     border-radius: 5px;
     text-decoration: none;
     transition: background 0.3s ease;
@@ -728,7 +783,7 @@ footer {
 }
 
 .home-page .main-carousel {
-    margin-top: 135px;
+    margin-top: 0;
 }
 
 body:not(.home-page) main {
@@ -789,12 +844,15 @@ body:not(.home-page) main {
 
 /* --- Contact Form --- */
 .contact-form-section {
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
+    padding: 2rem; /* Adjusted padding */
+    background-color: rgba(249, 249, 249, 0.8);
+    border-radius: 10px; /* Added rounded corners */
+    margin: 2rem auto; /* Center the section and add vertical margin */
+    max-width: 600px; /* Reduced width for smaller margins */
 }
 
 .contact-form-section .container {
-    max-width: 800px;
+    /* max-width is now handled by .contact-form-section */
     margin: 0 auto;
     text-align: center;
 }
@@ -821,6 +879,7 @@ body:not(.home-page) main {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 .submit-btn {
@@ -834,6 +893,7 @@ body:not(.home-page) main {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .submit-btn:hover {
@@ -892,4 +952,122 @@ body:not(.home-page) main {
 .social-icons-fixed a:hover {
     background-color: #a38a6d;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .about-page-section {
+        padding: 2rem 1rem;
+    }
+
+    .clothing-gallery,
+    .product-gallery {
+        padding: 1rem 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+
+    .main-carousel {
+        height: 90vw;
+    }
+
+    .carousel-cell {
+        background-size: contain;
+        background-position: center 100%;
+        background-repeat: no-repeat;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    nav {
+        position: relative;
+        justify-content: center;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-icons {
+        margin-right: 2rem;
+    }
+
+    header {
+        padding: 2rem 0;
+        background-color: rgba(255, 255, 255, 0.8); /* 在行動裝置上給予半透明背景 */
+    }
+    main {
+        /* padding: 1rem; */
+    }
+    .hero {
+        height: 400px;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .home-page .main-carousel {
+        margin-top: 130px;
+    }
+    .home-page main {
+        padding-top: 0;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-container {
+        flex-direction: column;
+    }
+
+    .news-carousel {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .clothing-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-info {
+        position: static;
+        transform: none;
+        text-align: center;
+        order: -1;
+    }
+
+    .footer-center-content {
+        order: 0;
+    }
+
+    .tea-section,
+    .tea-section.reverse {
+        flex-direction: column;
+    }
+
+    .tea-image {
+        max-width: 100%;
+    }
 }
