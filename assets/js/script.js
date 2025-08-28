@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Flickity Carousel Logic ---
     var mainElem = document.querySelector('.main-carousel');
     if (mainElem) {
-        var mainFlkty = new Flickity( mainElem, {
+        new Flickity( mainElem, {
             // options
             cellAlign: 'left',
             contain: true,
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var newsElem = document.querySelector('.news-carousel');
     if (newsElem) {
-        var newsFlkty = new Flickity( newsElem, {
+        new Flickity( newsElem, {
             // options
             cellAlign: 'left',
             contain: true,
@@ -32,31 +32,76 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Search Bar Logic ---
     const searchIcon = document.querySelector('.search-icon');
     const searchContainer = document.querySelector('.search-container');
+    const searchBar = document.querySelector('.search-bar');
+    const mainContent = document.querySelector('main');
+    let originalContent = mainContent.innerHTML;
 
     if (searchIcon) {
         searchIcon.addEventListener('click', function(e) {
             e.preventDefault();
             searchContainer.classList.toggle('active');
+            if (searchContainer.classList.contains('active')) {
+                searchBar.focus();
+            } else {
+                mainContent.innerHTML = originalContent;
+            }
         });
     }
 
-    // --- Cart Overlay Logic ---
-    const cartIcon = document.querySelector('.cart-icon');
-    const cartOverlay = document.querySelector('.cart-overlay');
-    const closeCartBtn = document.querySelector('.close-cart-btn');
-
-    if (cartIcon) {
-        cartIcon.addEventListener('click', function(e) {
-            e.preventDefault();
-            cartOverlay.classList.add('active');
+    function highlight() {
+        const searchTerm = searchBar.value.trim();
+        
+        // Remove previous highlights
+        const highlightedElements = mainContent.querySelectorAll('.highlight');
+        highlightedElements.forEach(el => {
+            const parent = el.parentNode;
+            parent.replaceChild(document.createTextNode(el.textContent), el);
+            parent.normalize();
         });
+
+        if (searchTerm === "") {
+            return; // Exit if search term is empty
+        }
+
+        const regex = new RegExp(searchTerm, 'gi');
+        let firstMatch = null;
+
+        function traverseAndHighlight(node) {
+            if (node.nodeType === 3) { // Text node
+                const match = node.nodeValue.match(regex);
+                if (match) {
+                    const span = document.createElement('span');
+                    span.innerHTML = node.nodeValue.replace(regex, `<span class="highlight">$&</span>`);
+                    
+                    const fragment = document.createDocumentFragment();
+                    while (span.firstChild) {
+                        fragment.appendChild(span.firstChild);
+                    }
+                    
+                    node.parentNode.replaceChild(fragment, node);
+
+                    if (!firstMatch) {
+                        firstMatch = mainContent.querySelector('.highlight');
+                    }
+                }
+            } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') { // Element node
+                Array.from(node.childNodes).forEach(traverseAndHighlight);
+            }
+        }
+
+        traverseAndHighlight(mainContent);
+
+        if (firstMatch) {
+            firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
-    if (closeCartBtn) {
-        closeCartBtn.addEventListener('click', function() {
-            cartOverlay.classList.remove('active');
-        });
+    if (searchBar && mainContent) {
+        searchBar.addEventListener('input', highlight);
     }
+
+
+    
 
     // --- Hamburger Menu Logic ---
     const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -137,4 +182,4 @@ document.addEventListener('DOMContentLoaded', function() {
             cell.style.backgroundImage = `url(${backgroundUrl})`;
         }
     });
-    });
+});

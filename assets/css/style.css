@@ -106,6 +106,11 @@ nav ul {
     padding: 0.5rem;
 }
 
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
 /* --- Cart Overlay --- */
 .cart-overlay {
     position: fixed;
@@ -544,6 +549,10 @@ footer {
         margin-right: 2rem;
     }
 
+    .search-container.active .search-bar {
+        width: 120px;
+    }
+
     header {
         padding: 2rem 0;
         background-color: rgba(255, 255, 255, 0.8); /* 在行動裝置上給予半透明背景 */
@@ -558,7 +567,7 @@ footer {
         font-size: 2rem;
     }
     .home-page .main-carousel {
-        margin-top: 130px;
+        margin-top: 0;
     }
     .home-page main {
         padding-top: 0;
@@ -765,14 +774,26 @@ footer {
     margin: 1rem 0;
 }
 
+.product-card p {
+    margin: 0.2rem 0;
+}
+
+.product-card .btn {
+    margin-top: 1rem;
+}
+
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
     background: #a38a6d;
-    color: #333;
+    color: #fff; /* Changed from #333 */
     border-radius: 5px;
     text-decoration: none;
     transition: background 0.3s ease;
+    font-size: 1.2rem; /* Added from submit-btn */
+    border: none; /* Added from submit-btn */
+    cursor: pointer; /* Added from submit-btn */
+    font-weight: bold; /* Added for consistency */
 }
 
 .btn:hover {
@@ -788,10 +809,9 @@ body:not(.home-page) main {
 }
 
 .products-background {
-    height: 200px;
-    background-image: url('../../images/ft_bg.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
 }
 
 /* --- Shopping Guide --- */
@@ -1006,6 +1026,10 @@ body:not(.home-page) main {
         margin-right: 2rem;
     }
 
+    .search-container.active .search-bar {
+        width: 120px;
+    }
+
     header {
         padding: 2rem 0;
         background-color: rgba(255, 255, 255, 0.8); /* 在行動裝置上給予半透明背景 */
@@ -1020,7 +1044,7 @@ body:not(.home-page) main {
         font-size: 2rem;
     }
     .home-page .main-carousel {
-        margin-top: 130px;
+        margin-top: 0;
     }
     .home-page main {
         padding-top: 0;
