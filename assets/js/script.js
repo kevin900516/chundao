@@ -128,4 +128,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-});
+
+    // --- Set background images for carousel cells ---
+    const carouselCells = document.querySelectorAll('.carousel-cell');
+    carouselCells.forEach(cell => {
+        const backgroundUrl = cell.getAttribute('data-background');
+        if (backgroundUrl) {
+            cell.style.backgroundImage = `url(${backgroundUrl})`;
+        }
+    });
+    });

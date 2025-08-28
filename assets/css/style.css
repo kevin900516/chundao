@@ -284,7 +284,7 @@ footer {
 
 /* --- Main Carousel --- */
 .main-carousel {
-    height: 80vh; /* Set height to 80% of the viewport height */
+    height: 90vh; /* Set height to 80% of the viewport height */
 }
 
 .carousel-cell {
@@ -292,7 +292,7 @@ footer {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
+    background-position: center 10%;
 }
 
 /* --- About Section --- */
