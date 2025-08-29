@@ -690,17 +690,12 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .tea-section {
+    .tea-section,
+    .tea-section.reverse {
         grid-template-columns: 1fr;
         grid-template-areas:
             "image"
             "description"; /* Stack image then text on mobile */
-    }
-
-    .tea-section.reverse {
-        grid-template-areas:
-            "image"
-            "description"; /* Still stack on mobile */
     }
 }
 
@@ -1083,10 +1078,7 @@ body:not(.home-page) main {
         order: 0;
     }
 
-    .tea-section,
-    .tea-section.reverse {
-        flex-direction: column;
-    }
+    
 
     .tea-image {
         max-width: 100%;
