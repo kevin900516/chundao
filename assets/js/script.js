@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Search Bar Logic ---
     const searchIcon = document.querySelector('.search-icon');
-    const searchContainer = document.querySelector('.search-container');
+    const searchContainer = document.querySelector('header .search-container');
     const searchBar = document.querySelector('.search-bar');
     const mainContent = document.querySelector('main');
     let originalContent = mainContent.innerHTML;
