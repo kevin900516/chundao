@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("春稻藝術坊 script loaded.");
 
+    // --- Loader Logic ---
+    const loader = document.getElementById('loader-wrapper');
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            loader.classList.add('hidden');
+        }, 1500); // 延遲1.5秒，確保動畫完整播放
+    });
+
     // --- Flickity Carousel Logic ---
     var mainElem = document.querySelector('.main-carousel');
     if (mainElem) {
