@@ -525,10 +525,10 @@ footer {
 
 .mobile-nav-content {
     position: relative;
-    top: 25%;
+    top: 15%;
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 0;
 }
 
 .mobile-nav-overlay a {
