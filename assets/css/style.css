@@ -1174,4 +1174,10 @@ body:not(.home-page) main {
     .about-content-grid {
         grid-template-columns: 1fr;
     }
+
+    .about-founder-image {
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
 }
