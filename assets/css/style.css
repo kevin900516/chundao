@@ -847,8 +847,8 @@ footer {
 
 .product-card img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the area, cropping if necessary */
 }
 
 .product-card h3 {
