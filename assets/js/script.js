@@ -190,4 +190,18 @@ document.addEventListener('DOMContentLoaded', function() {
             cell.style.backgroundImage = `url(${backgroundUrl})`;
         }
     });
+
+    // --- Mobile Category Dropdown Logic ---
+    const categoryDropdownToggle = document.querySelector('.category-dropdown-toggle');
+    const categoryDropdownMenu = document.querySelector('.category-dropdown-menu');
+
+    if (categoryDropdownToggle && categoryDropdownMenu) {
+        categoryDropdownToggle.addEventListener('click', function() {
+            if (categoryDropdownMenu.style.display === 'block') {
+                categoryDropdownMenu.style.display = 'none';
+            } else {
+                categoryDropdownMenu.style.display = 'block';
+            }
+        });
+    }
 });

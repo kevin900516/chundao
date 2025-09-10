@@ -166,6 +166,12 @@
     background-color: #f0f0f0;
 }
 
+.page-title {
+    margin-bottom: 1rem;
+}
+
+
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
     .shop-sidebar {
@@ -177,7 +183,7 @@
     }
 
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .shop-main {
