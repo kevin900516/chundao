@@ -45,6 +45,28 @@
     color: #a38a6d;
 }
 
+.shop-sidebar .category-dropdown .dropdown-menu {
+    max-height: 0; /* Collapsed by default */
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.shop-sidebar .category-dropdown .dropdown-menu.expanded {
+    max-height: 200px; /* Adjust as needed to fit content */
+    opacity: 1;
+}
+
+.shop-sidebar .category-dropdown > a .fas {
+    transition: transform 0.3s ease-out;
+}
+
+.shop-sidebar .category-dropdown > a .fas.rotated {
+    transform: rotate(180deg);
+}
+
 .shop-products {
     flex: 1;
     position: relative;

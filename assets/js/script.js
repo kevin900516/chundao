@@ -204,4 +204,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // --- Sidebar Category Dropdown Logic ---
+    const sidebarCategoryDropdown = document.querySelector('.shop-sidebar .category-dropdown > a');
+    const sidebarDropdownMenu = document.querySelector('.shop-sidebar .category-dropdown .dropdown-menu');
+    const sidebarDropdownArrow = sidebarCategoryDropdown ? sidebarCategoryDropdown.querySelector('.fas') : null; // Get the arrow icon
+
+    if (sidebarCategoryDropdown && sidebarDropdownMenu && sidebarDropdownArrow) {
+        // Set initial state to expanded
+        sidebarDropdownMenu.classList.add('expanded');
+        sidebarDropdownArrow.classList.add('rotated'); // Arrow points up when expanded
+
+        sidebarCategoryDropdown.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            sidebarDropdownMenu.classList.toggle('expanded');
+            sidebarDropdownArrow.classList.toggle('rotated');
+        });
+    }
 });
